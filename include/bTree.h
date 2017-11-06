@@ -18,11 +18,12 @@ typedef struct {
     int children[2*t];
 }bTreeNode;
 
-typedef struct bTree{
+typedef struct {
     //char fname[20];
-	//FILE *fp;
-	int root;
-	int next_pos;
+    //FILE *fp;
+    int root;
+    int next_pos;
+    bTreeNode nodes[1000000] ;
 }bTree;
 
 bTreeNode *node_init(bool leaf, int pos);
