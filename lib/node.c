@@ -1,4 +1,4 @@
-#include "b-tree.h"
+#include "../include/bTree.h"
 
 bTreeNode *node_init(bool leaf, int pos) {
     bTreeNode *node = (bTreeNode *)malloc(sizeof(bTreeNode));
@@ -11,18 +11,19 @@ bTreeNode *node_init(bool leaf, int pos) {
     return node;
 }
 
-void disp_node(bTreeNode* p)
+void disp_node(bTreeNode *node)
 {
 	printf("keys\n");
-	for(int i = 0; i < p->n - 1; i++)
+	for(int i = 0; i < node->size; i++)
 	{
-		printf("%d ", p->record[i].key);
+		printf("%d ", node->records[i].key);
+		printf("%s ",node->records[i].country);
 	}
 	printf("\n");
 	printf("links\n");
-	for(int i = 0; i < p->n; i++)
+	for(int i = 0; i < node->size; i++)
 	{
-		printf("%d ", p->children[i]);
+		printf("%d ", node->children[i]);
 	}
 	printf("\n");
 }

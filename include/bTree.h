@@ -1,4 +1,8 @@
 #include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #ifndef __BTREE_H__
 #define __BTREE_H__
 
@@ -26,6 +30,13 @@ typedef struct {
     bTreeNode nodes[1000000] ;
 }bTree;
 
+#endif
+
 bTreeNode *node_init(bool leaf, int pos);
-
-
+bTree *bTree_init();
+void write_array(bTree *tree, bTreeNode *node);
+bTreeNode *read_array(bTree *tree, int position);
+void splitChild(bTree* tree, bTreeNode *x, int i, bTreeNode *y);
+void insert_nonfull(bTree *tree, bTreeNode *node, Record *record);
+void insert(bTree *tree, Record *record);
+void disp_node(bTreeNode* p);

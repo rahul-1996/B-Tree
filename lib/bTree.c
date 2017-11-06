@@ -11,7 +11,7 @@ present in the CLRS textbook.
 
 bTree *bTree_init() {
     bTree *tree = malloc(sizeof(bTree));
-    tree->root = NULL ; 
+    tree->root = 0 ; 
     tree->next_pos = 0 ;
     return tree ; 
 }
@@ -89,15 +89,17 @@ void insert(bTree *tree, Record *record) {
     // If first insert, next->pos will be zero.
     if(tree->next_pos == 0) {
         bTreeNode *r = node_init(true, tree->next_pos);
-        r->records[0] = record; //Check
+        r->records[0] = *record; //Check
         r->size += 1;
         //tree->root = r;
         tree->next_pos +=1 ;
         write_array(tree,r);
+       // printf("Succesfully inserted\n");
+       // printf("Size is: %d\n",tree->nodes[0].size);
     }
     else {
         bTreeNode *r = read_array(tree,0);
-        if(r->size = 2*t-1) {
+        if(r->size == 2*t-1) {
             //r->leaf = false;
             bTreeNode *s = node_init(false,tree->next_pos);
             tree->next_pos += 1;
