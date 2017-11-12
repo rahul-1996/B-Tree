@@ -24,19 +24,32 @@ typedef struct {
 
 typedef struct {
     //char fname[20];
-    //FILE *fp;
+    FILE *fp;
     int root;
     int next_pos;
-    bTreeNode nodes[1000000] ;
+    bTreeNode *nodes[100000];
 }bTree;
 
-#endif
 
-bTreeNode *node_init(bool leaf, int pos);
+bTreeNode *node_init(bool leaf, bTree *tree);
 bTree *bTree_init();
 void write_array(bTree *tree, bTreeNode *node);
 bTreeNode *read_array(bTree *tree, int position);
-void splitChild(bTree* tree, bTreeNode *x, int i, bTreeNode *y);
-void insert_nonfull(bTree *tree, bTreeNode *node, Record *record);
-void insert(bTree *tree, Record *record);
+void splitChild(bTree* tree, bTreeNode **x, int i, bTreeNode **y);
+void insert_nonfull(bTree *tree, bTreeNode **node, Record *record);
+void insert(bTree **tree, Record *record);
 void disp_node(bTreeNode* p);
+void print_tree(bTree *tree, int pos);
+bTreeNode *search(bTree *tree, int position, Record *record);
+void deleteNode(bTree* tree, bTreeNode* node, Record* k);
+void removeFromLeaf(bTree *tree, bTreeNode *node, int idx);
+void removeFromNonLeaf(bTree *tree, bTreeNode *node, int idx);
+Record *getPred(bTree* tree, bTreeNode *node, int idx);
+Record *getSucc(bTree* tree, bTreeNode *node, int idx);
+void fill(bTree *tree, bTreeNode *node, int idx);
+void borrowFromPrev(bTree* tree, bTreeNode *node, int idx);
+void borrowFromNext(bTree* tree, bTreeNode *node, int idx);
+void merge(bTree* tree, bTreeNode *node, int idx);
+void free_array(bTree *tree, bTreeNode *node);
+
+#endif

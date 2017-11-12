@@ -1,0 +1,82 @@
+rm -rf *.o
+gcc -c -Dt=3  lib/bTree.c
+gcc -c -Dt=3  lib/node.c
+gcc -c -Dt=3  test.c
+gcc -c -Dt=3  lib/helper.c
+gcc bTree.o node.o test.o helper.o
+
+YOUR MOM
+
+==================================================
+
+------ Node position is 13 ------------
+keys
+574878 IND 
+links
+2 15 -1 -1 -1 -1 
+
+------ Node position is 2 ------------
+keys
+132486 IRQ 335197 IND 
+links
+0 12 4 10 8 6 
+
+------ Node position is 0 ------------
+keys
+32497 RSA 44587 USA 65933 EGY 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 12 ------------
+keys
+180049 IRQ 221563 AFG 261412 EGY 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 4 ------------
+keys
+451342 EGY 490649 AFG 543278 AFG 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 10 ------------
+keys
+588558 IRQ 676106 PAK 723919 GBR 724733 IRQ 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 8 ------------
+keys
+754265 IRQ 774597 AFG 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 6 ------------
+keys
+900217 RSA 940333 EGY 990171 IND 996522 RSA 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 15 ------------
+keys
+752113 PAK 839763 GBR 
+links
+10 8 6 -1 -1 -1 
+
+------ Node position is 10 ------------
+keys
+588558 IRQ 676106 PAK 723919 GBR 724733 IRQ 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 8 ------------
+keys
+754265 IRQ 774597 AFG 
+links
+-1 -1 -1 -1 -1 -1 
+
+------ Node position is 6 ------------
+keys
+900217 RSA 940333 EGY 990171 IND 996522 RSA 
+links
+-1 -1 -1 -1 -1 -1 

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TOTAL 5
+#define TOTAL 100000
 
 void insert_record(Record* record, int key, char country[], char grate[], int score, int rate) {
 	record->key = key;
@@ -33,13 +33,19 @@ int main() {
     bTree *tree = bTree_init();
     Record **records = read_file(records,"./data/dataset.csv");
     for(int i=0;i<TOTAL;i++) {
-        insert(tree, records[i]);
-    }   
-    printf("Node %d\n",0);
-    disp_node(&tree->nodes[0]);
-    printf("Node %d\n",1);    
-    disp_node(&tree->nodes[1]);
-    printf("Node %d\n",2);    
-    disp_node(&tree->nodes[2]); 
-    return 0;
+        insert(&tree, records[i]);
+    }  
+	//print_tree(tree,tree->root); 
+	
+	//for(int i=0;i<TOTAL-1;i++) {
+   //     deleteNode(tree, read_array(tree, tree->root) , records[i]);
+	//} 	
+	deleteNode(tree, read_array(tree, tree->root) ,records[8982]); 
+	printf("\n==================================================\n");
+	print_tree(tree, tree->root);
+
+	//printf("\n Record is %d\n", records[0]->key);
+	//bTreeNode *result = search(tree, tree->root, records[0]);
+	//printf("Record found in Node %d", result->pos);
+	return 0;
 }
