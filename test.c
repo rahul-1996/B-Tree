@@ -34,18 +34,25 @@ int main() {
     Record **records = read_file(records,"./data/dataset.csv");
     for(int i=0;i<TOTAL;i++) {
         insert(&tree, records[i]);
-    }  
-	//print_tree(tree,tree->root); 
-	
-	//for(int i=0;i<TOTAL-1;i++) {
-   //     deleteNode(tree, read_array(tree, tree->root) , records[i]);
-	//} 	
+	}  
+	//Printing the tree after inserts
+	print_tree(tree,tree->root); 
+	// Deleting a few of the inserted nodes. 
 	deleteNode(tree, read_array(tree, tree->root) ,records[8982]); 
-	printf("\n==================================================\n");
+	deleteNode(tree, read_array(tree, tree->root) ,records[98321]); 
+	deleteNode(tree, read_array(tree, tree->root) ,records[34631]); 
+	deleteNode(tree, read_array(tree, tree->root) ,records[0]);
+
+	printf("\n==================POST DELETION========================\n");
 	print_tree(tree, tree->root);
 
-	//printf("\n Record is %d\n", records[0]->key);
-	//bTreeNode *result = search(tree, tree->root, records[0]);
-	//printf("Record found in Node %d", result->pos);
+	bTreeNode *result = search(tree, tree->root, records[3421]);
+	if(result!=NULL) printf("Record found in Node %d\n", result->pos);
+	if(result==NULL) printf("Record has been deleted or is not found\n");
+	// Searching for a deleted record.
+	result = search(tree, tree->root, records[0]);
+	if(result!=NULL) printf("Record found in Node %d\n", result->pos);
+	if(result==NULL) printf("Record has been deleted or is not found\n");
+	
 	return 0;
 }

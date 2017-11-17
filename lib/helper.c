@@ -18,6 +18,8 @@ bTreeNode *read_array(bTree *tree, int position) {
     return (tree->nodes[position]);
 }
 
+/*
 void free_array(bTree *tree, bTreeNode *node) {
     free(tree->nodes[node->pos]);
 }
+*/

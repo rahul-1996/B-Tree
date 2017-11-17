@@ -1,6 +1,6 @@
 #include "../include/bTree.h"
 
-bTreeNode *node_init(bool leaf, bTree *tree) {
+bTreeNode *node_init(bTree *tree, bool leaf) {
     bTreeNode *node = (bTreeNode *)malloc(sizeof(bTreeNode));
     node->size = 0;
     node->leaf = leaf;
@@ -11,6 +11,7 @@ bTreeNode *node_init(bool leaf, bTree *tree) {
     }
     return node;
 }
+
 
 void disp_node(bTreeNode *node)
 {

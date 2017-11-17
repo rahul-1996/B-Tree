@@ -31,7 +31,7 @@ typedef struct {
 }bTree;
 
 
-bTreeNode *node_init(bool leaf, bTree *tree);
+bTreeNode *node_init(bTree *tree, bool leaf);
 bTree *bTree_init();
 void write_array(bTree *tree, bTreeNode *node);
 bTreeNode *read_array(bTree *tree, int position);
